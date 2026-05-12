@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/bestsale.css";
 
 function BestSale(){
@@ -17,9 +18,10 @@ function BestSale(){
             />
 
             <div className="position-absolute top-0 start-0 p-3 text-white">
+
               <h5>100% Organic Coffee Beans.</h5>
               <p>Get the best deal before close.</p>
-              <button className="btn btn-success">Shop Now →</button>
+              <Link to="/product"><button className="btn btn-success">Shop Now →</button></Link>
             </div>
 
           </div>

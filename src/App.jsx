@@ -6,11 +6,17 @@ import Products from "./components/products";
 import BestSale from "./components/bestSales";
 import Feature from "./components/features";
 import Footer from "./components/footer";
+
 import { Routes, Route } from "react-router-dom";
+
 import Admin from "./pages/Admin";
+import SimpleSlider from "./components/particularproduct";
+import ShopProduct from "./components/shopproducts";
 
 function App() {
+
   return (
+
     <Routes>
 
       <Route
@@ -29,10 +35,23 @@ function App() {
         }
       />
 
-  
-      <Route path="/pages/admin" element={<Admin />} />
+      <Route
+        path="/pages/admin"
+        element={<Admin />}
+      />
+
+      <Route
+        path="/product"
+        element={<SimpleSlider />}
+      />
+
+      <Route
+        path="/shopproducts"
+        element={<ShopProduct />}
+      />
 
     </Routes>
+
   );
 }
 

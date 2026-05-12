@@ -3,9 +3,10 @@ import "../styles/carousel.css";
 
 function Carousel(){
   return(
+    
 <div id="carouselExampleCaptions" className="carousel slide custom-carousel" data-bs-ride="carousel" data-bs-interval="2500">
 
-  <div className="carousel-indicators">
+    <div className="carousel-indicators">
     <button type="button" data-bs-slide-to="0" className="active"></button>
     <button type="button" data-bs-slide-to="1"></button>
   </div>

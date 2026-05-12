@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/products.css";
-
+import { Link } from "react-router-dom";
 function Products() {
 
   const products = [
@@ -24,12 +24,13 @@ function Products() {
         {products.map((item, index) => (
           <div className="col" key={index}>
             <div className="card p-3 h-100 d-flex flex-column product-card">
-
-              <img
+               <Link to="/shopproducts">
+              <img 
                 src={item.img}
                 alt={item.name}
                 className="card-img-top product-img"
               />
+              </Link>
 
               <small className="text-muted mt-2">{item.category}</small>
 
