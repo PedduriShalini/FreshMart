@@ -1,0 +1,116 @@
+
+/* FreshMart signup page */
+
+.signup-page {
+  min-height: 100vh;
+  background: #f5f8f2;
+  display: flex;
+  align-items: center;
+}
+
+.signup-card {
+  background: #ffffff;
+  padding: 38px;
+  border-radius: 18px;
+  border: 1px solid #e5eadf;
+  box-shadow: 0 8px 30px rgba(35, 70, 30, 0.08);
+}
+
+.signup-brand {
+  color: #27833b;
+  font-size: 30px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.signup-title {
+  color: #243324;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.signup-subtitle {
+  color: #737b70;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.signup-card .form-label {
+  color: #344334;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.signup-input {
+  min-height: 46px;
+  border: 1px solid #dce4d8;
+  border-radius: 8px;
+  padding: 10px 13px;
+}
+
+.signup-input:focus {
+  border-color: #27833b;
+  box-shadow: 0 0 0 3px rgba(39, 131, 59, 0.12);
+}
+
+.signup-button {
+  min-height: 48px;
+  background: #27833b;
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.signup-button:hover {
+  background: #1e692e;
+  color: #ffffff;
+}
+
+.signup-button:disabled {
+  background: #8eae91;
+  color: #ffffff;
+}
+
+.signup-login {
+  color: #626b60;
+  font-size: 14px;
+}
+
+.signup-login a,
+.signup-home-link {
+  color: #27833b;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-login a:hover,
+.signup-home-link:hover {
+  text-decoration: underline;
+}
+
+.signup-home-link {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+@media (max-width: 576px) {
+  .signup-page .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .signup-card {
+    padding: 25px 20px;
+    border-radius: 14px;
+  }
+
+  .signup-title {
+    font-size: 23px;
+  }
+
+  .signup-brand {
+    font-size: 27px;
+  }
+}

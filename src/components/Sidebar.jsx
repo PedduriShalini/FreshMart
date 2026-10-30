@@ -1,46 +1,84 @@
-import React from "react";
+import { NavLink } from "react-router-dom";
 import "../styles/sidebar.css";
 
 function Sidebar() {
-  return (
-    <div className="sidebar">
+  const menuItems = [
+    {
+      title: "Dashboard",
+      path: "/admin",
+      icon: "bi-house",
+      end: true,
+    },
+    {
+      title: "Products",
+      path: "/admin/products",
+      icon: "bi-cart",
+    },
+    {
+      title: "Categories",
+      path: "/admin/categories",
+      icon: "bi-list",
+    },
+    {
+      title: "Orders",
+      path: "/admin/orders",
+      icon: "bi-basket2",
+    },
+    {
+      title: "Customers",
+      path: "/admin/customers",
+      icon: "bi-people",
+    },
+    {
+      title: "Reviews",
+      path: "/admin/reviews",
+      icon: "bi-star",
+    },
+  ];
 
-      <h4 className="logo">FreshCart</h4>
+  const upcomingItems = [
+    {
+      title: "Support",
+      icon: "bi-headset",
+    },
+  ];
+
+  return (
+    <aside className="sidebar">
+      <h4 className="logo">FreshMart</h4>
 
       <ul className="menu">
-
-        <li><i className="bi bi-house"></i> Dashboard</li>
+        {menuItems.map((item) => (
+          <li key={item.path}>
+            <NavLink
+              to={item.path}
+              end={item.end || false}
+              className={({ isActive }) =>
+                `sidebar-link ${isActive ? "active" : ""}`
+              }
+            >
+              <i className={`bi ${item.icon}`}></i>
+              <span>{item.title}</span>
+            </NavLink>
+          </li>
+        ))}
 
         <p className="menu-title">Store Management</p>
 
-        <li><i className="bi bi-cart"></i> Products</li>
-        <li><i className="bi bi-list"></i> Categories</li>
-        <li><i className="bi bi-basket2"></i> Orders</li>
-        <li><i className="bi bi-shop"></i> Sellers / Vendors</li>
-        <li><i className="bi bi-person"></i> Customers</li>
-        <li><i className="bi bi-star"></i> Reviews</li>
-        <li><i className="bi bi-arrow-90deg-down"></i> Menu Level</li>
-
-        <p className="menu-title">Site Settings</p>
-
-        <li><i className="bi bi-newspaper"></i> Blog</li>
-        <li><i className="bi bi-image"></i> Media</li>
-        <li><i className="bi bi-gear"></i> Store Setting</li>
-
-        <p className="menu-title">Support</p>
-
-        <li><i className="bi bi-headphones"></i> Support Ticket</li>
-        <li><i className="bi bi-patch-question"></i> Help Center</li>
-        <li><i className="bi bi-infinity"></i> How FreshCart Works</li>
-
-        <p className="menu-title">Our Apps</p>
-
-        <li><i className="bi bi-apple"></i> Apple Store</li>
-        <li><i className="bi bi-google-play"></i> Google Play Store</li>
-
+        {upcomingItems.map((item) => (
+          <li key={item.title}>
+            <span
+              className="sidebar-link disabled-link"
+              title={`${item.title} page is not implemented yet`}
+            >
+              <i className={`bi ${item.icon}`}></i>
+              <span>{item.title}</span>
+              <small className="ms-auto">Soon</small>
+            </span>
+          </li>
+        ))}
       </ul>
-
-    </div>
+    </aside>
   );
 }
 

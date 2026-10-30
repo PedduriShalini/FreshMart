@@ -1,12 +1,304 @@
-.product-img {
-  height: 210px;
+
+/* =========================================
+   FRESHMART PRODUCT SECTION
+========================================= */
+
+.freshmart-products {
+  width: 100%;
+  max-width: 1320px;
+  min-width: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.freshmart-products,
+.freshmart-products * {
+  box-sizing: border-box;
+}
+
+.products-heading {
+  min-width: 0;
+}
+
+.products-heading h2 {
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   RESPONSIVE PRODUCT GRID
+========================================= */
+
+.freshmart-products .products-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+  align-items: stretch;
+}
+
+/* =========================================
+   PRODUCT CARD
+========================================= */
+
+.freshmart-products .product-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  height: 100%;
+  padding: 12px;
+  margin: 0;
+  overflow: hidden;
+
+  background: #ffffff;
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.freshmart-products .product-card:hover {
+  border-color: #b7d9c4;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================
+   PRODUCT IMAGE
+   All images receive the same display area.
+========================================= */
+
+.freshmart-products .product-details-link {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.freshmart-products .product-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 160px;
+  min-height: 160px;
+  max-height: 160px;
+  flex: 0 0 160px;
+
+  padding: 8px;
+  margin: 0 0 12px;
+  overflow: hidden;
+
+  background-color: #ffffff;
+  border-radius: 6px;
+}
+
+.freshmart-products img.product-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  max-width: 100%;
+  max-height: 100%;
+
   object-fit: contain;
+  object-position: center;
+
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-.product-card {
-  transition: 0.3s;
+/* =========================================
+   PRODUCT NAME AND CATEGORY
+========================================= */
+
+.freshmart-products .product-information {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  width: 100%;
+  min-width: 0;
 }
 
-.product-card:hover {
-  border-color: green;
+.freshmart-products .product-category {
+  display: block;
+  width: 100%;
+  min-width: 0;
+
+  color: #737373;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.freshmart-products .product-title {
+  display: -webkit-box;
+  width: 100%;
+  min-width: 0;
+  min-height: 2.8em;
+
+  margin: 0;
+  overflow: hidden;
+
+  color: #222222;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* =========================================
+   PRICE AND CART CONTROLS
+========================================= */
+
+.freshmart-products .product-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  width: 100%;
+  min-width: 0;
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.freshmart-products .product-price {
+  min-width: 0;
+  color: #222222;
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.freshmart-products .product-add-button {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.freshmart-products .product-quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.freshmart-products .product-quantity-controls span {
+  min-width: 18px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* =========================================
+   RESPONSIVE BREAKPOINTS
+========================================= */
+
+/* Medium laptops and narrow browser windows */
+@media (max-width: 1199.98px) {
+  .freshmart-products .products-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+/* Tablets and split-screen windows */
+@media (max-width: 900px) {
+  .freshmart-products .products-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .freshmart-products .product-image-container {
+    height: 150px;
+    min-height: 150px;
+    max-height: 150px;
+    flex-basis: 150px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 575.98px) {
+  .freshmart-products {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .freshmart-products .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .freshmart-products .product-card {
+    padding: 9px;
+    border-radius: 8px;
+  }
+
+  .freshmart-products .product-image-container {
+    height: 125px;
+    min-height: 125px;
+    max-height: 125px;
+    flex-basis: 125px;
+    padding: 5px;
+    margin-bottom: 9px;
+  }
+
+  .freshmart-products .product-category {
+    font-size: 0.75rem;
+  }
+
+  .freshmart-products .product-title {
+    font-size: 0.9rem;
+    min-height: 2.8em;
+  }
+
+  .freshmart-products .product-card-bottom {
+    gap: 7px;
+    padding-top: 10px;
+  }
+
+  .freshmart-products .product-price {
+    font-size: 0.9rem;
+  }
+
+  .freshmart-products .product-add-button,
+  .freshmart-products .product-quantity-controls .btn {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
+
+  .freshmart-products .product-quantity-controls {
+    gap: 5px;
+  }
+}
+
+/* Very narrow windows */
+@media (max-width: 360px) {
+  .freshmart-products .products-grid {
+    gap: 8px;
+  }
+
+  .freshmart-products .product-card {
+    padding: 7px;
+  }
+
+  .freshmart-products .product-image-container {
+    height: 110px;
+    min-height: 110px;
+    max-height: 110px;
+    flex-basis: 110px;
+  }
 }
